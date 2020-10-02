@@ -30,5 +30,5 @@ npm install git+https://github.com/Kaukov/fibonacci_app_lib.git
 ### Finally include it in your project
 
 ```js
-const { fibonacci, fibonacciTable } = require('./fibonacci_app_lib')
+const { fibonacci, fibonacciTable } = require('fibonacci_app_lib')
 ```

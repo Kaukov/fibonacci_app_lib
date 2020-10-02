@@ -76,58 +76,96 @@ describe('Fibonacci sequence tests', () => {
         })
 
         describe('should print the correct whole sequence', () => {
+            it('should return the correct sequence object for value 1', () => {
+                const fibonacci1Sequence = fibonacci(1, true)
+
+                expect(fibonacci1Sequence).to.be.an('object')
+                expect(fibonacci1Sequence).to.deep.equal({
+                    '1': 0
+                })
+            })
+
+            it('should return the correct sequence object for value 2', () => {
+                const fibonacci2Sequence = fibonacci(2, true)
+
+                expect(fibonacci2Sequence).to.be.an('object')
+                expect(fibonacci2Sequence).to.deep.equal({
+                    '1': 0,
+                    '2': 1
+                })
+            })
+
+            it('should return the correct sequence object for value 3', () => {
+                const fibonacci3Sequence = fibonacci(3, true)
+
+                expect(fibonacci3Sequence).to.be.an('object')
+                expect(fibonacci3Sequence).to.deep.equal({
+                    '1': 0,
+                    '2': 1,
+                    '3': 1
+                })
+            })
+
             it('should return the correct sequence object for value 4', () => {
                 const fibonacci4Sequence = fibonacci(4, true)
 
                 expect(fibonacci4Sequence).to.be.an('object')
-                expect(fibonacci4Sequence).to.have.property('1').with.valueOf(0)
-                expect(fibonacci4Sequence).to.have.property('2').with.valueOf(1)
-                expect(fibonacci4Sequence).to.have.property('3').with.valueOf(1)
-                expect(fibonacci4Sequence).to.have.property('4').with.valueOf(2)
+                expect(fibonacci4Sequence).to.deep.equal({
+                    '1': 0,
+                    '2': 1,
+                    '3': 1,
+                    '4': 2
+                })
             })
 
             it('should return the correct sequence object for value 5', () => {
                 const fibonacci5Sequence = fibonacci(5, true)
 
                 expect(fibonacci5Sequence).to.be.an('object')
-                expect(fibonacci5Sequence).to.have.property('1').with.valueOf(0)
-                expect(fibonacci5Sequence).to.have.property('2').with.valueOf(1)
-                expect(fibonacci5Sequence).to.have.property('3').with.valueOf(1)
-                expect(fibonacci5Sequence).to.have.property('4').with.valueOf(2)
-                expect(fibonacci5Sequence).to.have.property('5').with.valueOf(3)
+                expect(fibonacci5Sequence).to.deep.equal({
+                    '1': 0,
+                    '2': 1,
+                    '3': 1,
+                    '4': 2,
+                    '5': 3
+                })
             })
 
             it('should return the correct sequence object for value 8', () => {
                 const fibonacci8Sequence = fibonacci(8, true)
 
                 expect(fibonacci8Sequence).to.be.an('object')
-                expect(fibonacci8Sequence).to.have.property('1').with.valueOf(0)
-                expect(fibonacci8Sequence).to.have.property('2').with.valueOf(1)
-                expect(fibonacci8Sequence).to.have.property('3').with.valueOf(1)
-                expect(fibonacci8Sequence).to.have.property('4').with.valueOf(2)
-                expect(fibonacci8Sequence).to.have.property('5').with.valueOf(3)
-                expect(fibonacci8Sequence).to.have.property('6').with.valueOf(5)
-                expect(fibonacci8Sequence).to.have.property('7').with.valueOf(8)
-                expect(fibonacci8Sequence).to.have.property('8').with.valueOf(13)
+                expect(fibonacci8Sequence).to.deep.equal({
+                    '1': 0,
+                    '2': 1,
+                    '3': 1,
+                    '4': 2,
+                    '5': 3,
+                    '6': 5,
+                    '7': 8,
+                    '8': 13
+                })
             })
 
             it('should return the correct sequence object for value 13', () => {
                 const fibonacci13Sequence = fibonacci(13, true)
 
                 expect(fibonacci13Sequence).to.be.an('object')
-                expect(fibonacci13Sequence).to.have.property('1').with.valueOf(0)
-                expect(fibonacci13Sequence).to.have.property('2').with.valueOf(1)
-                expect(fibonacci13Sequence).to.have.property('3').with.valueOf(1)
-                expect(fibonacci13Sequence).to.have.property('4').with.valueOf(2)
-                expect(fibonacci13Sequence).to.have.property('5').with.valueOf(3)
-                expect(fibonacci13Sequence).to.have.property('6').with.valueOf(5)
-                expect(fibonacci13Sequence).to.have.property('7').with.valueOf(8)
-                expect(fibonacci13Sequence).to.have.property('8').with.valueOf(13)
-                expect(fibonacci13Sequence).to.have.property('9').with.valueOf(21)
-                expect(fibonacci13Sequence).to.have.property('10').with.valueOf(34)
-                expect(fibonacci13Sequence).to.have.property('11').with.valueOf(55)
-                expect(fibonacci13Sequence).to.have.property('12').with.valueOf(89)
-                expect(fibonacci13Sequence).to.have.property('13').with.valueOf(144)
+                expect(fibonacci13Sequence).to.deep.equal({
+                    '1': 0,
+                    '2': 1,
+                    '3': 1,
+                    '4': 2,
+                    '5': 3,
+                    '6': 5,
+                    '7': 8,
+                    '8': 13,
+                    '9': 21,
+                    '10': 34,
+                    '11': 55,
+                    '12': 89,
+                    '13': 144
+                })
             })
         })
     })

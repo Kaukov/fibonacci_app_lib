@@ -16,6 +16,13 @@ describe('Fibonacci table tests', () => {
             expect(fibTable0).to.be.a('string')
             expect(fibTable0).to.equal('Nothing to display for the 0th number.')
         })
+
+        it('Should return an error message to provide an integer value', () => {
+            const fibTable0 = fibonacciTable('asdasd')
+
+            expect(fibTable0).to.be.a('string')
+            expect(fibTable0).to.equal('Please provide an integer value!')
+        })
     })
 
     describe('Fibonacci table correct values', () => {

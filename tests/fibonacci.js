@@ -17,6 +17,13 @@ describe('Fibonacci sequence tests', () => {
             expect(fibonacciNeg).to.equal(-1)
         })
 
+        it('should return -1 when a string is provided as parameter', () => {
+            const fibonacci0 = fibonacci('asdfasdf')
+
+            expect(fibonacci0).to.be.a('number')
+            expect(fibonacci0).to.equal(-1)
+        })
+
         it('should return 0 when 1 is provided as parameter', () => {
             const fibonacci1 = fibonacci(1)
 

@@ -3,30 +3,29 @@ const { fibonacciTable } = require('../lib')
 
 describe('Fibonacci table tests', () => {
     describe('Fibonacci table incorrect values', () => {
-        it('Should return bad value error message for a negative provided value', () => {
-            const fibTableNegativeValue = fibonacciTable(-20)
-
-            expect(fibTableNegativeValue).to.be.a('string')
-            expect(fibTableNegativeValue).to.equal('Please provide a positive integer value!')
+        it('should throw an error when a negative value is provided', () => {
+            expect(() => fibonacciTable(-20))
+                .to.throw('Invalid number or number less than 1 provided!')
         })
 
-        it('Should return a "nothing to display" error message for the 0th number', () => {
-            const fibTable0 = fibonacciTable(0)
-
-            expect(fibTable0).to.be.a('string')
-            expect(fibTable0).to.equal('Nothing to display for the 0th number.')
+        it('should throw an error when 0 is provided as value', () => {
+            expect(() => fibonacciTable(0))
+                .to.throw('Invalid number or number less than 1 provided!')
         })
 
-        it('Should return an error message to provide an integer value', () => {
-            const fibTable0 = fibonacciTable('asdasd')
+        it('should return an error message to provide an integer value', () => {
+            expect(() => fibonacciTable('asdfasd'))
+                .to.throw('Invalid number or number less than 1 provided!')
+        })
 
-            expect(fibTable0).to.be.a('string')
-            expect(fibTable0).to.equal('Please provide an integer value!')
+        it('should throw an error when a bigger than max integer value is provided', () => {
+            expect(() => fibonacciTable(Number.MAX_SAFE_INTEGER + 2))
+                .to.throw('Very high number provided. Please provide a lower value!')
         })
     })
 
     describe('Fibonacci table correct values', () => {
-        it('Should return the correct table for the number 1', () => {
+        it('should return the correct table for the number 1', () => {
             const fibTable1 = fibonacciTable(1)
 
             expect(fibTable1).to.be.an('array')
@@ -36,7 +35,7 @@ describe('Fibonacci table tests', () => {
             ])
         })
 
-        it('Should return the correct table for the number 2', () => {
+        it('should return the correct table for the number 2', () => {
             const fibTable2 = fibonacciTable(2)
 
             expect(fibTable2).to.be.an('array')
@@ -47,7 +46,7 @@ describe('Fibonacci table tests', () => {
             ])
         })
 
-        it('Should return the correct table for the number 3', () => {
+        it('should return the correct table for the number 3', () => {
             const fibTable3 = fibonacciTable(3)
 
             expect(fibTable3).to.be.an('array')
@@ -59,7 +58,7 @@ describe('Fibonacci table tests', () => {
             ])
         })
 
-        it('Should return the correct table for the number 4', () => {
+        it('should return the correct table for the number 4', () => {
             const fibTable4 = fibonacciTable(4)
 
             expect(fibTable4).to.be.an('array')
@@ -72,7 +71,7 @@ describe('Fibonacci table tests', () => {
             ])
         })
 
-        it('Should return the correct table for the number 5', () => {
+        it('should return the correct table for the number 5', () => {
             const fibTable5 = fibonacciTable(5)
 
             expect(fibTable5).to.be.an('array')
@@ -86,7 +85,7 @@ describe('Fibonacci table tests', () => {
             ])
         })
 
-        it('Should return the correct table for the number 8', () => {
+        it('should return the correct table for the number 8', () => {
             const fibTable8 = fibonacciTable(8)
 
             expect(fibTable8).to.be.an('array')
